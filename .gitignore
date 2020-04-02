@@ -23,4 +23,6 @@
 hs_err_pid*
 
 #Intellij Idea projct files
-.idea/
+/.idea/
+/gradle/
+/.gradle/

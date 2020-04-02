@@ -1,0 +1,22 @@
+<idea-plugin>
+    <id>lekanich.magic-advisor</id>
+    <name>Magic Advisor</name>
+    <vendor email="lekan1992@gmail.com" url="https://github.com/Lekanich/Magic-Advisor"/>
+
+    <description><![CDATA[
+        I'm your advisor in hard times. When nobody can tell you what to do - I can!
+        Just ask me.
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>

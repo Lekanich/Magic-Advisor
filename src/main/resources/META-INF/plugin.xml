@@ -8,8 +8,6 @@
         Just ask me.
     ]]></description>
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
@@ -17,6 +15,9 @@
     </extensions>
 
     <actions>
-        <!-- Add your actions here -->
+        <group id="advisor">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <action id="lekanich.GetAdvise" description="Get advise" text="Get Advise" class="lekanich.GetAdvise" icon="WisdomIcons.MAIN"/>
+        </group>
     </actions>
 </idea-plugin>

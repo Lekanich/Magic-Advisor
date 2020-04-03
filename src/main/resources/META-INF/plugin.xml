@@ -17,7 +17,10 @@
     <actions>
         <group id="advisor">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
-            <action id="lekanich.GetAdvise" description="Get advise" text="Get Advise" class="lekanich.GetAdvise" icon="WisdomIcons.MAIN"/>
+            <action id="lekanich.GetAdvise" description="Get advise" text="Get Advise"
+                    class="lekanich.GetAdvise" icon="WisdomIcons.MAIN"/>
+            <action id="lekanich.MagicBallAdvise" description="Get magic ball 8 advice" text="Magic Ball 8"
+                    class="lekanich.MagicBallAdvise" icon="WisdomIcons.MAIN"/>
         </group>
     </actions>
 </idea-plugin>

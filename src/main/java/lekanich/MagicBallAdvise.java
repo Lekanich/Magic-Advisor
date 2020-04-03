@@ -7,11 +7,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class GetAdvise extends AnAction {
-
+public class MagicBallAdvise extends AnAction {
 	@Override
 	public void actionPerformed(@NotNull AnActionEvent e) {
-		List<String> wisdom = WisdomBundle.getAdvices();
+		List<String> wisdom = WisdomBundle.getMagicBallAdvices();
 		if (wisdom.isEmpty()) {
 			// or say some sad thing
 			return;
@@ -20,7 +19,7 @@ public class GetAdvise extends AnAction {
 
 		NotificationGroup group = new NotificationGroup(WisdomBundle.message("wisdom.main.name"), NotificationDisplayType.STICKY_BALLOON, true);
 		Notification notification = group.createNotification(
-				WisdomBundle.message("wisdom.main.advisor.title"),
+				WisdomBundle.message("wisdom.main.magic.ball.title"),
 				message,
 				NotificationType.INFORMATION,
 				new NotificationListener.UrlOpeningListener(false)
@@ -33,4 +32,5 @@ public class GetAdvise extends AnAction {
 	public boolean isDumbAware() {
 		return true;
 	}
+
 }

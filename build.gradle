@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'lekanich'
-version '0.0.0'
+version '1.0.0'
 sourceCompatibility = 1.8
 
 repositories {
@@ -21,8 +21,7 @@ intellij {
 }
 patchPluginXml {
     changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+      Added your magic ball 8 advisor. If you have any questions - just ask!"""
 }
 
 runIde {

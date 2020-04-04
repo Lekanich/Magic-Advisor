@@ -4,11 +4,11 @@
     <vendor email="lekan1992@gmail.com" url="https://github.com/Lekanich/Magic-Advisor"/>
 
     <description><![CDATA[
-        I'm your advisor in hard times.
-        When nobody can tell you what to do - I can!
-        When nobody is around you - I am near!
-        Just ask me.
-        But remember I'm just a program and my main reason is to cheer up you and the last decision is only on your shoulders.
+        I'm your advisor in hard times. <br/>
+        When nobody can tell you what to do - I can!<br/>
+        When nobody is around you - I am near!<br/>
+        Just ask me.<br/>
+        But remember I'm just a program and my main reason is to cheer up you and the last decision is only on your shoulders.<br/>
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
@@ -20,10 +20,10 @@
     <actions>
         <group id="advisor">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
-            <action id="lekanich.GetAdvise" description="Get advise" text="Get Advise"
-                    class="lekanich.GetAdvise" icon="WisdomIcons.MAIN"/>
-            <action id="lekanich.MagicBallAdvise" description="Get magic ball 8 advice" text="Magic Ball 8"
-                    class="lekanich.MagicBallAdvise" icon="WisdomIcons.MAIN"/>
+<!--            <action id="lekanich.GetAdvise" description="Get advise" text="Get Advise"-->
+<!--                    class="lekanich.GetAdvise" icon="WisdomIcons.MAIN"/>-->
+            <action id="lekanich.MagicBallAdvise" description="Get magic ball advice" text="Magic Ball"
+                    class="lekanich.MagicBallAdvise" icon="WisdomIcons.BALL"/>
         </group>
     </actions>
 </idea-plugin>

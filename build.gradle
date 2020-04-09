@@ -17,11 +17,14 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2019.3.4'
+    version '2020.1'
+    updateSinceUntilBuild false
 }
 patchPluginXml {
     changeNotes """
-      Added your magic ball 8 advisor. If you have any questions - just ask!"""
+      Added your magic ball 8 advisor. If you have any questions - just ask!
+      Added short instruction how to use it! =)
+    """
 }
 
 runIde {

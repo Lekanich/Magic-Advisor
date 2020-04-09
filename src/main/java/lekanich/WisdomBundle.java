@@ -1,11 +1,12 @@
 package lekanich;
 
-import com.intellij.CommonBundle;
+import com.intellij.AbstractBundle;
 import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.PropertyKey;
 
-import java.util.*;
+import java.util.List;
+import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
 @NoArgsConstructor
@@ -25,7 +26,7 @@ public class WisdomBundle {
 	private static final String MAGIC_BALL_PREFIX = "wisdom.magic.ball.";
 
 	public static String message(@PropertyKey(resourceBundle = BUNDLE_NAME) String key, Object... params) {
-		return CommonBundle.message(BUNDLE, key, params);
+		return AbstractBundle.message(BUNDLE, key, params);
 	}
 
 	public static List<String> getMagicBallAdvices() {

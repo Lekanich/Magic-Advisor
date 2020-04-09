@@ -9,6 +9,12 @@
         When nobody is around you - I am near!<br/>
         Just ask me.<br/>
         But remember I'm just a program and my main reason is to cheer up you and the last decision is only on your shoulders.<br/>
+
+        Usage instruction:<br/>
+        Go to Menu bar and choose 'Tools' in the menu.<br/>
+        On the top, you should see the 'Magic Ball' option. <br/>
+        Ask a question and press the option. <br/>
+        You can find the answer in the event log in the left bottom.<br/>
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>

@@ -1,7 +1,9 @@
 <idea-plugin>
     <id>lekanich.magic-advisor</id>
     <name>Magic Advisor</name>
-    <vendor email="lekan1992@gmail.com" url="https://github.com/Lekanich/Magic-Advisor"/>
+    <vendor email="lekan1992@gmail.com" url="https://github.com/Lekanich/Magic-Advisor">
+        Aleksandr Zhelezniak
+    </vendor>
 
     <description><![CDATA[
         I'm your advisor in hard times. <br/>

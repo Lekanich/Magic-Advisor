@@ -1,18 +1,13 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-    <g>
-        <title>background</title>
-        <rect x="-1" y="-1" width="18" height="18" id="canvas_background" fill="none"/>
-    </g>
+	<g>
+		<title>background</title>
+		<rect fill="none" id="canvas_background" height="18" width="18" y="-1" x="-1"/>
+	</g>
 
-    <g>
-        <title>Layer 1</title>
-        <rect id="svg_2" height="6" width="6" y="5" x="5" stroke-width="0" fill="#231F20"/>
-        <path stroke="0" fill="#59a869" stroke-opacity="null"
-              d="m5.083148,10.134637l2.91973,-4.250329l2.91973,4.250329l-5.83946,0z" id="svg_11"
-              transform="rotate(179.64862060546875 8.00287914276123,8.009471893310545) "/>
-        <path stroke="0" fill="#6e6e6e"
-              d="m8,1.016607c-3.864073,0 -6.996582,3.12657 -6.996582,6.983392c0,3.856851 3.13248,6.983392 6.996582,6.983392c3.864131,0 6.996582,-3.126541 6.996582,-6.983392c0,-1.928406 -0.78312,-3.674254 -2.049239,-4.938003c-1.266129,-1.263749 -3.015277,-2.045389 -4.947343,-2.045389zm-2.913321,9.896554c0,-1.294735 0,-4.531588 0,-5.826323l5.826641,0c0,1.618426 0,4.207897 0,5.826323l-5.826641,0z"
-              id="svg_1"/>
-    </g>
+	<g>
+		<title>Layer 1</title>
+		<ellipse ry="7" rx="7" id="svg_1" cy="8" cx="8" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="0" fill="#6e6e6e"/>
+		<ellipse ry="4" rx="4" id="svg_3" cy="8" cx="8" stroke-opacity="null" stroke-width="0" stroke="0" fill="#231F20"/>
+		<path transform="rotate(179.64862060546875 8.013032913208008,8.008953094482422) " id="svg_11" d="m5.093303,10.134118l2.91973,-4.25033l2.91973,4.25033l-5.83946,0z" stroke-opacity="null" fill="#59a869" stroke="0"/>
+	</g>
 </svg>

@@ -6,6 +6,8 @@ plugins {
 group 'lekanich'
 version '1.0.3'
 
+println "CI: ${System.getenv('CI')}"
+
 // specified the last version
 def ideaVersion = '2020.1'
 if (project.hasProperty("intellijIdeaVersion")) {
@@ -39,8 +41,11 @@ intellij {
 buildPlugin {
     getArchiveClassifier().set("${intellij.version}")
 }
-publishPlugin {
-    token intellijPublishToken
+
+if (project.hasProperty("intellijPublishToken")) {
+    publishPlugin {
+        token intellijPublishToken
+    }
 }
 
 patchPluginXml {

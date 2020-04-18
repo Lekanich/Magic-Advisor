@@ -4,9 +4,22 @@ plugins {
 }
 
 group 'lekanich'
-version '1.0.2'
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+version '1.0.3'
+
+// specified the last version
+def ideaVersion = '2020.1'
+if (project.hasProperty("intellijIdeaVersion")) {
+    ideaVersion = intellijIdeaVersion ? intellijIdeaVersion : defaultIdeaVersion
+}
+println "IdeaVersion is : ${ideaVersion}"
+
+def artifactVersion = ideaVersion ? version + "-" + ideaVersion : version
+println "ArtifactVersion is : ${artifactVersion}"
+
+version artifactVersion
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 tasks.withType(JavaCompile) { options.encoding = 'UTF-8' }
 
 repositories {
@@ -19,11 +32,15 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2020.1'
+    version ideaVersion
+    println "Building for version: ${version}"
 }
 
 buildPlugin {
     getArchiveClassifier().set("${intellij.version}")
+}
+publishPlugin {
+    token intellijPublishToken
 }
 
 patchPluginXml {

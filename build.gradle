@@ -9,9 +9,10 @@ String pluginVersion = '1.0.5'//-Snapshot
 println "CI: ${System.getenv('CI')}"
 
 // specified the last version
-def ideaVersion = '2020.2'
+def ideaVersion = '2019.3'
 if (project.hasProperty("intellijIdeaVersion")) {
     ideaVersion = project.property("intellijIdeaVersion")
+    ideaVersion = intellijIdeaVersion ? intellijIdeaVersion : defaultIdeaVersion
 }
 println "IdeaVersion is : ${ideaVersion}"
 
@@ -46,8 +47,8 @@ if (project.hasProperty("intellijPublishToken")) {
 
 patchPluginXml {
 //    version pluginVersion
-    sinceBuild '201'
-    untilBuild '202.*'
+    sinceBuild '145'
+    untilBuild '193.*'
     changeNotes """
      * [1.0.5]
       Added ability to get wisdom from different philosophers.

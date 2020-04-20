@@ -49,8 +49,8 @@ if (project.hasProperty("intellijPublishToken")) {
 }
 
 patchPluginXml {
-    sinceBuild '2016.1'
-    untilBuild '2019.3.4'
+    sinceBuild '145'
+    untilBuild '193.*'
     changeNotes """
       Added your magic ball 8 advisor. If you have any questions - just ask!
       Added short instruction how to use it! =)

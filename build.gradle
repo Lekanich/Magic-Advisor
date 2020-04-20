@@ -4,18 +4,18 @@ plugins {
 }
 
 group 'lekanich'
-version '1.0.3'
+String pluginVersion = '1.0.3'
 
 println "CI: ${System.getenv('CI')}"
 
 // specified the last version
 def ideaVersion = '2020.1'
 if (project.hasProperty("intellijIdeaVersion")) {
-    ideaVersion = intellijIdeaVersion ? intellijIdeaVersion : defaultIdeaVersion
+    ideaVersion = intellijIdeaVersion
 }
 println "IdeaVersion is : ${ideaVersion}"
 
-def artifactVersion = ideaVersion ? version + "-" + ideaVersion : version
+String artifactVersion = ideaVersion ? pluginVersion + "-" + ideaVersion : pluginVersion
 println "ArtifactVersion is : ${artifactVersion}"
 
 version artifactVersion
@@ -38,10 +38,6 @@ intellij {
     println "Building for version: ${version}"
 }
 
-buildPlugin {
-    getArchiveClassifier().set("${intellij.version}")
-}
-
 if (project.hasProperty("intellijPublishToken")) {
     publishPlugin {
         token intellijPublishToken
@@ -49,6 +45,7 @@ if (project.hasProperty("intellijPublishToken")) {
 }
 
 patchPluginXml {
+    version pluginVersion
     changeNotes """
       Added your magic ball 8 advisor. If you have any questions - just ask!
       Added short instruction how to use it! =)

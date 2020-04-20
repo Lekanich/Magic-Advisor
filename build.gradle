@@ -12,7 +12,6 @@ println "CI: ${System.getenv('CI')}"
 def ideaVersion = '2019.3'
 if (project.hasProperty("intellijIdeaVersion")) {
     ideaVersion = project.property("intellijIdeaVersion")
-    ideaVersion = intellijIdeaVersion ? intellijIdeaVersion : defaultIdeaVersion
 }
 println "IdeaVersion is : ${ideaVersion}"
 

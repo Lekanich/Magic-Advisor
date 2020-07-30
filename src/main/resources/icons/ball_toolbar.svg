@@ -1,13 +1,9 @@
-<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-	<g>
-		<title>background</title>
-		<rect fill="none" id="canvas_background" height="18" width="18" y="-1" x="-1"/>
-	</g>
-
-	<g>
-		<title>Layer 1</title>
-		<ellipse ry="7" rx="7" id="svg_1" cy="8" cx="8" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="0" fill="#6e6e6e"/>
-		<ellipse ry="4" rx="4" id="svg_3" cy="8" cx="8" stroke-opacity="null" stroke-width="0" stroke="0" fill="#231F20"/>
-		<path transform="rotate(179.64862060546875 8.013032913208008,8.008953094482422) " id="svg_11" d="m5.093303,10.134118l2.91973,-4.25033l2.91973,4.25033l-5.83946,0z" stroke-opacity="null" fill="#59a869" stroke="0"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+	<g fill="none" fill-rule="evenodd">
+		<g fill-rule="nonzero" stroke="#000" stroke-opacity="0" transform="translate(1 1)">
+			<circle cx="7" cy="7" r="7" fill="#6e6e6e" stroke="none"/>
+			<circle cx="7" cy="7" r="4" fill="#231F20" stroke="none"/>
+			<polygon fill="#59A869" stroke="none" points="4.093 9.134 7.013 4.884 9.933 9.134" transform="rotate(179.649 7.013 7.009)"/>
+		</g>
 	</g>
 </svg>

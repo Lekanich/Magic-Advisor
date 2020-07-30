@@ -1,19 +1,13 @@
-<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-    <title>Layer 1</title>
-    <g>
-        <title>Magic Advisor</title>
-        <rect x="-1" y="-1" width="40" height="40" id="canvas_background" fill="none"/>
-    </g>
-    <ellipse ry="19" rx="19" id="internal" cy="20.0" cx="20" stroke-width="0" fill="#6E6E6E"/>
-    <g>
-        <ellipse ry="10" rx="10" id="internal" cy="20.0" cx="20" stroke-width="0" fill="#231F20"/>
-        <path stroke="0" id="shield_light"
-              d="m14.005078,14.098822l11.989851,0l0,9.441883l-5.994929,2.360473l-5.994928,-2.360473l0.000007,-9.441883z"
-              stroke-opacity="0" stroke-width="0" fill="#59A869"/>
-        <text style="cursor: move;" font-style="italic" font-weight="normal" xml:space="preserve" text-anchor="start"
-              font-family="Gotham" font-size="4" id="svg_2" y="21.3408" x="16.421895"
-              stroke-width="0" stroke="9" fill="#FFFFFF">Ask</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <g fill="none" fill-rule="evenodd">
+        <rect width="40" height="40"/>
+        <circle cx="20" cy="20" r="19" fill="#6E6E6E" fill-rule="nonzero"/>
+        <g transform="translate(10 10)">
+            <circle cx="10" cy="10" r="10" fill="#231F20" fill-rule="nonzero"/>
+            <polygon fill="#59A869" fill-rule="nonzero" points="4.005 4.099 15.995 4.099 15.995 13.541 10 15.901 4.005 13.541 4.005 4.099"/>
+            <text fill="#FFF" stroke="9" stroke-width="9" font-family="Gotham" font-size="4" font-style="italic">
+                <tspan x="6.422" y="11.341">Ask</tspan>
+            </text>
+        </g>
     </g>
 </svg>
-
-

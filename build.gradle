@@ -4,12 +4,12 @@ plugins {
 }
 
 group 'lekanich'
-String pluginVersion = '1.0.3'
+String pluginVersion = '1.0.4'
 
 println "CI: ${System.getenv('CI')}"
 
 // specified the last version
-def ideaVersion = '2020.1'
+def ideaVersion = '2020.2'
 if (project.hasProperty("intellijIdeaVersion")) {
     ideaVersion = intellijIdeaVersion
 }
@@ -45,7 +45,9 @@ if (project.hasProperty("intellijPublishToken")) {
 }
 
 patchPluginXml {
-    version pluginVersion
+//    version pluginVersion
+    sinceBuild '201'
+    untilBuild '202.*'
     changeNotes """
       Added your magic ball 8 advisor. If you have any questions - just ask!
       Added short instruction how to use it! =)

@@ -25,7 +25,7 @@ public class MagicBallAdvise extends AnAction {
 	/**
 	 * [when happens, what it was]
 	 */
-	private static AtomicReference<Pair<Long, String>> lastValue = new AtomicReference<>();
+	private static final AtomicReference<Pair<Long, String>> LAST_VALUE = new AtomicReference<>();
 
 	@Override
 	public void actionPerformed(@NotNull AnActionEvent e) {
@@ -44,12 +44,12 @@ public class MagicBallAdvise extends AnAction {
 
 	private String selectMessage() {
 		long now = TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis());
-		Pair<Long, String> last = lastValue.get();
+		Pair<Long, String> last = LAST_VALUE.get();
 
 		if (last != null) {
 			boolean reuse = needToReuse(now - last.getFirst());
 			if (reuse) {
-				lastValue.set(Pair.create(now, last.getSecond()));
+				LAST_VALUE.set(Pair.create(now, last.getSecond()));
 				return last.getSecond();
 			}
 		}
@@ -60,7 +60,7 @@ public class MagicBallAdvise extends AnAction {
 		}
 
 		String message = wisdom.get(randomIndex(wisdom));
-		lastValue.set(Pair.create(now, message));
+		LAST_VALUE.set(Pair.create(now, message));
 		return message;
 	}
 

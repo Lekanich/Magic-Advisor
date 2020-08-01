@@ -49,6 +49,10 @@ patchPluginXml {
     sinceBuild '201'
     untilBuild '202.*'
     changeNotes """
+     * [1.0.5]
+      Added ability to get wisdom from different philosophers.
+      Added thoughts of Socrates.
+     * [1.0.4]
       Added your magic ball 8 advisor. If you have any questions - just ask!
       Added short instruction how to use it! =)
     """

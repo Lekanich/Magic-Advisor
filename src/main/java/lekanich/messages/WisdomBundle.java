@@ -26,9 +26,9 @@ public class WisdomBundle {
         return AbstractBundle.message(BUNDLE, key, params);
     }
 
-    public static List<String> getMagicBallAdvices() {
+    public static List<String> getAdvices() {
         return BUNDLE.keySet().stream()
-                .map(WisdomBundle::message)
+                .map(MagicBallBundle::message)
                 .collect(Collectors.toList());
     }
 }

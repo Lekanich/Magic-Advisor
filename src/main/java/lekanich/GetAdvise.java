@@ -11,7 +11,7 @@ import com.intellij.notification.Notifications;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import lekanich.messages.CommonBundle;
-import lekanich.messages.MagicBallBundle;
+import lekanich.messages.WisdomBundle;
 import org.jetbrains.annotations.NotNull;
 
 public final class GetAdvise extends AnAction {
@@ -32,7 +32,7 @@ public final class GetAdvise extends AnAction {
     }
 
     private String selectMessage() {
-        List<String> wisdom = MagicBallBundle.getAdvices();
+        List<String> wisdom = WisdomBundle.getAdvices();
         if (wisdom.isEmpty()) {
             wisdom = Collections.singletonList(CommonBundle.message("wisdom.dummy.answer"));
         }

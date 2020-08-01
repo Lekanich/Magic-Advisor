@@ -22,9 +22,9 @@ public class MagicBallBundle {
         return AbstractBundle.message(BUNDLE, key, params);
     }
 
-    public static List<String> getAdvices() {
+    public static List<String> getMagicBallAdvices() {
         return BUNDLE.keySet().stream()
-                .map(MagicBallBundle::message)
+                .map(WisdomBundle::message)
                 .collect(Collectors.toList());
     }
 }

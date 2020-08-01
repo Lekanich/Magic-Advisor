@@ -11,7 +11,7 @@
         <g transform="translate(10 10)">
             <circle cx="10" cy="10" r="10" fill="#231F20" fill-rule="nonzero"/>
             <polygon fill="url(#magicballlight-a)" fill-rule="nonzero" stroke="#4C8B58" stroke-width=".5" points="4.005 4.099 15.995 4.099 15.995 13.541 10 15.901 4.005 13.541"/>
-            <text fill="#FFF" stroke="9" font-family="Gotham" font-size="4" transform="translate(6 7)">
+            <text fill="#FFF" stroke="#FFF" stroke-width="0.1" font-family="Gotham" font-size="4" transform="translate(6 7)">
                 <tspan x=".422" y="4.341">Ask</tspan>
             </text>
         </g>

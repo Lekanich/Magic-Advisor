@@ -24,7 +24,7 @@ public class MagicBallBundle {
 
     public static List<String> getMagicBallAdvices() {
         return BUNDLE.keySet().stream()
-                .map(WisdomBundle::message)
+                .map(MagicBallBundle::message)
                 .collect(Collectors.toList());
     }
 }

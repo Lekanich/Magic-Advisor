@@ -15,7 +15,7 @@
         <g transform="translate(9 9)">
             <circle cx="11" cy="11" r="11" fill="url(#untitled-a)" fill-rule="nonzero" stroke="#000" stroke-width=".2"/>
             <circle cx="11" cy="11" r="10" fill="#231F20" fill-rule="nonzero" stroke="#000" stroke-width=".2"/>
-            <polygon fill="url(#untitled-b)" fill-rule="nonzero" points="5.005 5.099 16.995 5.099 16.995 14.541 11 16.901 5.005 14.541"/>
+            <path fill="url(#untitled-b)" fill-rule="nonzero" d="M8.995,5.901 L12.995,5.901 C15.204139,5.901 16.995,7.691861 16.995,9.901 L16.995,11.2089873 C16.995,13.3067213 15.6855684,15.1814164 13.7160161,15.9034632 L10.995,16.901 L10.995,16.901 L8.27398388,15.9034632 C6.30443156,15.1814164 4.995,13.3067213 4.995,11.2089873 L4.995,9.901 C4.995,7.691861 6.785861,5.901 8.995,5.901 Z"/>
             <text fill="#FFF" stroke="#FFF" stroke-width=".1" font-family="Gotham" font-size="4" transform="translate(7 8)">
                 <tspan x=".422" y="4.341">Ask</tspan>
             </text>

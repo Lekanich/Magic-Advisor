@@ -17,6 +17,8 @@
         On the top, you should see the 'Magic Ball' option. <br/>
         Ask a question and press the option. <br/>
         You can find the answer in the event log in the left bottom.<br/>
+        Almost the same actions you need to do to get the philosopher's wisdom.<br/>
+        Choose 'Get Wisdom' option in 'Tools' menu.<br/>
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>

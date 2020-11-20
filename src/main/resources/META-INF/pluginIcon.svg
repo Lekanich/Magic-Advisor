@@ -1,17 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
     <defs>
-        <linearGradient id="magicballlight-a" x1="50%" x2="50%" y1="0%" y2="100%">
+        <linearGradient id="untitled-a" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#1A3E47"/>
+            <stop offset="100%"/>
+        </linearGradient>
+        <linearGradient id="untitled-b" x1="50%" x2="50%" y1="0%" y2="100%">
             <stop offset="0%" stop-color="#59A869"/>
             <stop offset="100%" stop-color="#389FD6"/>
         </linearGradient>
     </defs>
     <g fill="none" fill-rule="evenodd">
         <rect width="40" height="40"/>
-        <circle cx="20" cy="20" r="19" fill="#6E6E6E" fill-rule="nonzero"/>
-        <g transform="translate(10 10)">
-            <circle cx="10" cy="10" r="10" fill="#231F20" fill-rule="nonzero"/>
-            <polygon fill="url(#magicballlight-a)" fill-rule="nonzero" stroke="#4C8B58" stroke-width=".5" points="4.005 4.099 15.995 4.099 15.995 13.541 10 15.901 4.005 13.541"/>
-            <text fill="#FFF" stroke="#FFF" stroke-width="0.1" font-family="Gotham" font-size="4" transform="translate(6 7)">
+        <circle cx="20" cy="20" r="19" fill="#6E6E6E" fill-rule="nonzero" stroke="#000" stroke-width=".2"/>
+        <g transform="translate(9 9)">
+            <circle cx="11" cy="11" r="11" fill="url(#untitled-a)" fill-rule="nonzero" stroke="#000" stroke-width=".2"/>
+            <circle cx="11" cy="11" r="10" fill="#231F20" fill-rule="nonzero" stroke="#000" stroke-width=".2"/>
+            <polygon fill="url(#untitled-b)" fill-rule="nonzero" points="5.005 5.099 16.995 5.099 16.995 14.541 11 16.901 5.005 14.541"/>
+            <text fill="#FFF" stroke="#FFF" stroke-width=".1" font-family="Gotham" font-size="4" transform="translate(7 8)">
                 <tspan x=".422" y="4.341">Ask</tspan>
             </text>
         </g>

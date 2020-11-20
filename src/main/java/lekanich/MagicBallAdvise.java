@@ -1,6 +1,5 @@
 package lekanich;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
@@ -21,12 +20,12 @@ public final class MagicBallAdvise extends AnAction {
     /**
      * in seconds
      */
-    private static final int TIMEOUT_FOR_REPEAT_ANSWER = 3;
+    private static final int TIMEOUT_FOR_REPEAT_ANSWER = 2;
 
     /**
      * in seconds
      */
-    private static final int TIMEOUT_FOR_HALF_CHANCE_TO_REPEAT_ANSWER = 10;
+    private static final int TIMEOUT_FOR_HALF_CHANCE_TO_REPEAT_ANSWER = 5;
 
     /**
      * [when happens, what it was]
@@ -60,12 +59,12 @@ public final class MagicBallAdvise extends AnAction {
             }
         }
 
-        List<String> wisdom = MagicBallBundle.getMagicBallAdvices();
-        if (wisdom.isEmpty()) {
-            wisdom = Collections.singletonList(CommonBundle.message("wisdom.dummy.answer"));
+        int size = MagicBallBundle.getMagicBallAdvicesCount();
+        if (size == 0) {
+            return CommonBundle.message("wisdom.dummy.answer");
         }
 
-        String message = wisdom.get(randomIndex(wisdom));
+        String message = MagicBallBundle.getMagicBallAdviceByIndex(randomIndex(size));
         LAST_VALUE.set(Pair.create(now, message));
         return message;
     }
@@ -79,8 +78,8 @@ public final class MagicBallAdvise extends AnAction {
         return false;
     }
 
-    private int randomIndex(List<String> wisdom) {
-        return (int) (Math.random() * wisdom.size());
+    private int randomIndex(int size) {
+        return (int) (Math.random() * size);
     }
 
     @Override

@@ -1,19 +1,13 @@
 package lekanich.messages;
 
-import com.intellij.AbstractBundle;
-import lombok.NoArgsConstructor;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.PropertyKey;
-
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
+import com.intellij.AbstractBundle;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.PropertyKey;
 
-@NoArgsConstructor
-public class WisdomBundle {
-    /**
-     * The {@link java.util.ResourceBundle} path.
-     */
+public class WisdomBundle extends AbstractBundle {
     @NonNls
     private static final String BUNDLE_NAME = "messages.WisdomBundle";
 
@@ -21,9 +15,14 @@ public class WisdomBundle {
      * The {@link java.util.ResourceBundle} instance.
      */
     private static final ResourceBundle BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
+    private static final WisdomBundle INSTANCE = new WisdomBundle();
+
+    private WisdomBundle() {
+        super(BUNDLE_NAME);
+    }
 
     public static String message(@PropertyKey(resourceBundle = BUNDLE_NAME) String key, Object... params) {
-        return AbstractBundle.message(BUNDLE, key, params);
+        return INSTANCE.getMessage(key, params);
     }
 
     public static List<String> getAdvices() {

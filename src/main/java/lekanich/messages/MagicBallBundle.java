@@ -1,30 +1,49 @@
 package lekanich.messages;
 
-import java.util.List;
-import java.util.ResourceBundle;
-import java.util.stream.Collectors;
 import com.intellij.AbstractBundle;
-import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.PropertyKey;
 
 /**
  * @author Lekanich
  */
-@NoArgsConstructor
-public class MagicBallBundle {
+public class MagicBallBundle extends AbstractBundle {
     @NonNls
     private static final String BUNDLE_NAME = "messages.MagicBallBundle";
+    @NonNls
+    public static final String[] KEYS = {
+            "wisdom.magic.ball.positive.1",
+            "wisdom.magic.ball.positive.2",
+            "wisdom.magic.ball.positive.3",
+            "wisdom.magic.ball.positive.4",
+            "wisdom.magic.ball.positive.5",
+            "wisdom.magic.ball.negative.1",
+            "wisdom.magic.ball.negative.2",
+            "wisdom.magic.ball.negative.3",
+            "wisdom.magic.ball.negative.4",
+            "wisdom.magic.ball.negative.5",
+            "wisdom.magic.ball.non.commit.positive.1",
+            "wisdom.magic.ball.non.commit.positive.2",
+            "wisdom.magic.ball.non.commit.positive.3",
+            "wisdom.magic.ball.non.commit.positive.4",
+            "wisdom.magic.ball.non.commit.positive.5",
+            "wisdom.magic.ball.neutral.1",
+            "wisdom.magic.ball.neutral.2",
+            "wisdom.magic.ball.neutral.3",
+            "wisdom.magic.ball.neutral.4",
+            "wisdom.magic.ball.neutral.5"
+    };
 
-    private static final ResourceBundle BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
+    private static final MagicBallBundle BUNDLE = new MagicBallBundle();
 
-    public static String message(@PropertyKey(resourceBundle = BUNDLE_NAME) String key, Object... params) {
-        return AbstractBundle.message(BUNDLE, key, params);
+    private MagicBallBundle() {
+        super(BUNDLE_NAME);
     }
 
-    public static List<String> getMagicBallAdvices() {
-        return BUNDLE.keySet().stream()
-                .map(MagicBallBundle::message)
-                .collect(Collectors.toList());
+    public static int getMagicBallAdvicesCount() {
+        return KEYS.length;
+    }
+
+    public static String getMagicBallAdviceByIndex(int index) {
+        return BUNDLE.getMessage(KEYS[index]);
     }
 }

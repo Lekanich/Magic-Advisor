@@ -1,6 +1,5 @@
 package lekanich;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import com.intellij.notification.Notification;

@@ -1,15 +1,15 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.intellij' version '0.6.4'
+    id 'org.jetbrains.intellij' version '0.6.5'
 }
 
 group 'lekanich'
-String pluginVersion = '2020.2.02'
+String pluginVersion = '2020.3.01'
 
 println "CI: ${System.getenv('CI')}"
 
 // specified the last version
-def ideaVersion = '2020.2'
+def ideaVersion = '2020.3'
 if (project.hasProperty("intellijIdeaVersion")) {
     ideaVersion = project.property("intellijIdeaVersion")
 }
@@ -49,8 +49,10 @@ if (project.hasProperty("intellijPublishToken")) {
 patchPluginXml {
 //    version pluginVersion
     sinceBuild '163'
-    untilBuild '202.*'
+    untilBuild '203.*'
     changeNotes """
+     * [2020.3.01]<br/>
+        IDEA update <br/>
      * [2020.2.01]<br/>
        Unify source code to support single version.<br/>
        Update plugin icon<br/>
@@ -73,5 +75,5 @@ runIde {
 
 //https://data.services.jetbrains.com/products?fields=code,name,releases.downloads,releases.version,releases.build,releases.type&code=DG,PS,DL,MPS,MPSIIP,RDCPPP,WS,AC,IIC,IIE,GO,CL,PCD,PCC,RD,PCE,IIU,RM,PCP
 runPluginVerifier {
-    ideVersions = "2016.3.8,2017.3.7,2018.3.6,2019.3.5,2020.1.4, 2020.2.3"
+    ideVersions = "2016.3.8,2017.3.7,2018.3.6,2019.3.5,2020.1.4,2020.2.3,2020.3"
 }

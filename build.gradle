@@ -51,19 +51,19 @@ patchPluginXml {
     sinceBuild '163'
     untilBuild '203.*'
     changeNotes """
-     * [2020.3.01]<br/>
-        IDEA update <br/>
-     * [2020.2.01]<br/>
-       Unify source code to support single version.<br/>
-       Update plugin icon<br/>
-     * [1.0.6]<br/>
-      Added thoughts of Plato and Gandhi.<br/>
-     * [1.0.5]<br/>
-      Added ability to get wisdom from different philosophers.<br/>
-      Added thoughts of Socrates.<br/>
-     * [1.0.4]<br/>
-      Added your magic ball 8 advisor. If you have any questions - just ask!<br/>
-      Added short instruction how to use it! =)<br/>
+     [2020.3.01]<br/>
+       * IDEA update 2020.3 <br/>
+     [2020.2.01]<br/>
+      * Unify source code to support single version.<br/>
+      * Update plugin icon<br/>
+     [1.0.6]<br/>
+      * Added thoughts of Plato and Gandhi.<br/>
+     [1.0.5]<br/>
+      * Added ability to get wisdom from different philosophers.<br/>
+      * Added thoughts of Socrates.<br/>
+     [1.0.4]<br/>
+      * Added your magic ball 8 advisor. If you have any questions - just ask!<br/>
+      * Added short instruction how to use it! =)<br/>
     """
 }
 

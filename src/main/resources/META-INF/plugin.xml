@@ -3,6 +3,10 @@
     <name>Magic Advisor</name>
     <vendor email="lekan1992@gmail.com">Aleksandr Zhelezniak</vendor>
 
+    <resource-bundle>messages.CommonBundle</resource-bundle>
+    <resource-bundle>messages.WisdomBundle</resource-bundle>
+    <resource-bundle>messages.MagicBallBundle</resource-bundle>
+
     <description><![CDATA[
         I'm your advisor in hard times. <br/>
         When nobody can tell you what to do - I can!<br/>

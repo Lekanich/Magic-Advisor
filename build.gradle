@@ -49,7 +49,7 @@ if (project.hasProperty("intellijPublishToken")) {
 patchPluginXml {
 //    version pluginVersion
     sinceBuild '163'
-    untilBuild '203.*'
+//    untilBuild '203.*'
     changeNotes """
      [2020.3.01]<br/>
        * IDEA update 2020.3 <br/>

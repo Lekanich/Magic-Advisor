@@ -3,8 +3,6 @@ package lekanich;
 import java.util.Collections;
 import java.util.List;
 import com.intellij.notification.Notification;
-import com.intellij.notification.NotificationDisplayType;
-import com.intellij.notification.NotificationGroup;
 import com.intellij.notification.NotificationListener;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.Notifications;
@@ -20,8 +18,7 @@ public final class GetAdvise extends AnAction {
     public void actionPerformed(@NotNull AnActionEvent e) {
         String message = selectMessage();
 
-        NotificationGroup group = new NotificationGroup(CommonBundle.message("wisdom.main.name"), NotificationDisplayType.STICKY_BALLOON, true);
-        Notification notification = group.createNotification(
+        Notification notification = NotificationCenter.getNotificationGroup().createNotification(
                 CommonBundle.message("wisdom.main.advisor.title"),
                 message,
                 NotificationType.INFORMATION,

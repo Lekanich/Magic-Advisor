@@ -9,7 +9,7 @@ String pluginVersion = '2020.3.02'
 println "CI: ${System.getenv('CI')}"
 
 // specified the last version
-def ideaVersion = '2020.3'
+def ideaVersion = '2020.3.2'
 if (project.hasProperty("intellijIdeaVersion")) {
     ideaVersion = project.property("intellijIdeaVersion")
 }
@@ -28,10 +28,10 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
-    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
+    annotationProcessor 'org.projectlombok:lombok:1.18.18'
 
-    testCompile group: 'junit', name: 'junit', version: '4.13.1'
+    testCompile group: 'junit', name: 'junit', version: '4.13.2'
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
@@ -51,6 +51,9 @@ patchPluginXml {
     sinceBuild '163'
 //    untilBuild '203.*'
     changeNotes """
+     [2020.3.02]<br/>
+       * IDEA update 2020.3.2 <br/>
+       * Notifications are not longer stick <br/>
      [2020.3.01]<br/>
        * IDEA update 2020.3 <br/>
      [2020.2.01]<br/>
@@ -75,5 +78,5 @@ runIde {
 
 //https://data.services.jetbrains.com/products?fields=code,name,releases.downloads,releases.version,releases.build,releases.type&code=DG,PS,DL,MPS,MPSIIP,RDCPPP,WS,AC,IIC,IIE,GO,CL,PCD,PCC,RD,PCE,IIU,RM,PCP
 runPluginVerifier {
-    ideVersions = "2016.3.8,2017.3.7,2018.3.6,2019.3.5,2020.1.4,2020.2.3,2020.3"
+    ideVersions = "2016.3.8,2017.3.7,2018.3.6,2020.3.2"
 }

@@ -1,13 +1,11 @@
 <idea-plugin>
-    <id>lekanich.magic-advisor</id>
-    <name>Magic Advisor</name>
-    <vendor email="lekan1992@gmail.com">Aleksandr Zhelezniak</vendor>
+	<id>lekanich.magic-advisor</id>
+	<name>Magic Advisor</name>
+	<vendor email="lekan1992@gmail.com">Aleksandr Zhelezniak</vendor>
 
-    <resource-bundle>messages.CommonBundle</resource-bundle>
-    <resource-bundle>messages.WisdomBundle</resource-bundle>
-    <resource-bundle>messages.MagicBallBundle</resource-bundle>
+	<resource-bundle>messages.CommonBundle</resource-bundle>
 
-    <description><![CDATA[
+	<description><![CDATA[
         I'm your advisor in hard times. <br/>
         When nobody can tell you what to do - I can!<br/>
         When nobody is around you - I am near!<br/>
@@ -23,19 +21,19 @@
         Choose 'Get Wisdom' option in 'Tools' menu.<br/>
     ]]></description>
 
-    <depends>com.intellij.modules.platform</depends>
+	<depends>com.intellij.modules.platform</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
-    </extensions>
+	<extensions defaultExtensionNs="com.intellij">
+		<notificationGroup id="Magic Advisor" displayType="BALLOON" key="wisdom.main.name"/>
+	</extensions>
 
-    <actions>
-        <group id="advisor">
-            <add-to-group group-id="ToolsMenu" anchor="first"/>
-            <action id="lekanich.GetAdvise" description="Get wisdom" text="Get Wisdom"
-                    class="lekanich.GetAdvise" icon="WisdomIcons.PHILOSOPHY"/>
-            <action id="lekanich.MagicBallAdvise" description="Get magic ball advice" text="Magic Ball"
-                    class="lekanich.MagicBallAdvise" icon="WisdomIcons.BALL"/>
-        </group>
-    </actions>
+	<actions>
+		<group id="advisor">
+			<add-to-group group-id="ToolsMenu" anchor="first"/>
+			<action id="lekanich.GetAdvise" description="Get wisdom" text="Get Wisdom"
+					class="lekanich.GetAdvise" icon="WisdomIcons.PHILOSOPHY"/>
+			<action id="lekanich.MagicBallAdvise" description="Get magic ball advice" text="Magic Ball"
+					class="lekanich.MagicBallAdvise" icon="WisdomIcons.BALL"/>
+		</group>
+	</actions>
 </idea-plugin>

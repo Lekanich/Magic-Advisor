@@ -21,8 +21,7 @@ public final class GetAdvise extends AnAction {
         Notification notification = NotificationCenter.getNotificationGroup().createNotification(
                 CommonBundle.message("wisdom.main.advisor.title"),
                 message,
-                NotificationType.INFORMATION,
-                new NotificationListener.UrlOpeningListener(false)
+                NotificationType.INFORMATION
         );
 
         Notifications.Bus.notify(notification, e.getProject());

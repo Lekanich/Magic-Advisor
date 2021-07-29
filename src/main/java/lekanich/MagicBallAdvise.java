@@ -36,7 +36,9 @@ public final class MagicBallAdvise extends AnAction {
         Notification notification = NotificationCenter.getNotificationGroup().createNotification(
                 CommonBundle.message("wisdom.main.magic.ball.title"),
                 message,
-                NotificationType.INFORMATION);
+                NotificationType.INFORMATION,
+                new NotificationListener.UrlOpeningListener(false)
+        );
 
         Notifications.Bus.notify(notification, e.getProject());
     }

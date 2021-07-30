@@ -25,6 +25,5 @@ hs_err_pid*
 /.idea/
 /.gradle/
 
-#gradle properties
-gradle.properties
 possible.versions.txt
+/token.txt

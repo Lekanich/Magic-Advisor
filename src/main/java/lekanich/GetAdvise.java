@@ -3,7 +3,6 @@ package lekanich;
 import java.util.Collections;
 import java.util.List;
 import com.intellij.notification.Notification;
-import com.intellij.notification.NotificationListener;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.Notifications;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -14,30 +13,27 @@ import org.jetbrains.annotations.NotNull;
 
 public final class GetAdvise extends AnAction {
 
-    @Override
-    public void actionPerformed(@NotNull AnActionEvent e) {
-        String message = selectMessage();
+	@Override
+	public void actionPerformed(@NotNull AnActionEvent e) {
+		String message = selectMessage();
 
-        Notification notification = NotificationCenter.getNotificationGroup().createNotification(
-                CommonBundle.message("wisdom.main.advisor.title"),
-                message,
-                NotificationType.INFORMATION,
-                new NotificationListener.UrlOpeningListener(false)
-        );
+		Notification notification = NotificationCenter.getNotificationGroup()
+				.createNotification(message, NotificationType.INFORMATION);
+		notification.setTitle(CommonBundle.message("wisdom.main.advisor.title"));
 
-        Notifications.Bus.notify(notification, e.getProject());
-    }
+		Notifications.Bus.notify(notification, e.getProject());
+	}
 
-    private String selectMessage() {
-        List<String> wisdom = WisdomBundle.getAdvices();
-        if (wisdom.isEmpty()) {
-            wisdom = Collections.singletonList(CommonBundle.message("wisdom.dummy.answer"));
-        }
-        return wisdom.get((int) (Math.random() * wisdom.size()));
-    }
+	private String selectMessage() {
+		List<String> wisdom = WisdomBundle.getAdvices();
+		if (wisdom.isEmpty()) {
+			wisdom = Collections.singletonList(CommonBundle.message("wisdom.dummy.answer"));
+		}
+		return wisdom.get((int) (Math.random() * wisdom.size()));
+	}
 
-    @Override
-    public boolean isDumbAware() {
-        return true;
-    }
+	@Override
+	public boolean isDumbAware() {
+		return true;
+	}
 }

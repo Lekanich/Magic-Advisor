@@ -14,73 +14,70 @@ import lekanich.messages.MagicBallBundle;
 import org.jetbrains.annotations.NotNull;
 
 public final class MagicBallAdvise extends AnAction {
-    /**
-     * in seconds
-     */
-    private static final int TIMEOUT_FOR_REPEAT_ANSWER = 2;
+	/**
+	 * in seconds
+	 */
+	private static final int TIMEOUT_FOR_REPEAT_ANSWER = 2;
 
-    /**
-     * in seconds
-     */
-    private static final int TIMEOUT_FOR_HALF_CHANCE_TO_REPEAT_ANSWER = 5;
+	/**
+	 * in seconds
+	 */
+	private static final int TIMEOUT_FOR_HALF_CHANCE_TO_REPEAT_ANSWER = 5;
 
-    /**
-     * [when happens, what it was]
-     */
-    private static final AtomicReference<Pair<Long, String>> LAST_VALUE = new AtomicReference<>();
+	/**
+	 * [when happens, what it was]
+	 */
+	private static final AtomicReference<Pair<Long, String>> LAST_VALUE = new AtomicReference<>();
 
-    @Override
-    public void actionPerformed(@NotNull AnActionEvent e) {
-        String message = selectMessage();
+	@Override
+	public void actionPerformed(@NotNull AnActionEvent e) {
+		String message = selectMessage();
 
-        Notification notification = NotificationCenter.getNotificationGroup().createNotification(
-                CommonBundle.message("wisdom.main.magic.ball.title"),
-                message,
-                NotificationType.INFORMATION,
-                new NotificationListener.UrlOpeningListener(false)
-        );
+		Notification notification = NotificationCenter.getNotificationGroup()
+				.createNotification(message, NotificationType.INFORMATION);
+		notification.setTitle(CommonBundle.message("wisdom.main.magic.ball.title"));
 
-        Notifications.Bus.notify(notification, e.getProject());
-    }
+		Notifications.Bus.notify(notification, e.getProject());
+	}
 
-    private String selectMessage() {
-        long now = TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis());
-        Pair<Long, String> last = LAST_VALUE.get();
+	private String selectMessage() {
+		long now = TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis());
+		Pair<Long, String> last = LAST_VALUE.get();
 
-        if (last != null) {
-            boolean reuse = needToReuse(now - last.getFirst());
-            if (reuse) {
-                LAST_VALUE.set(Pair.create(now, last.getSecond()));
-                return last.getSecond();
-            }
-        }
+		if (last != null) {
+			boolean reuse = needToReuse(now - last.getFirst());
+			if (reuse) {
+				LAST_VALUE.set(Pair.create(now, last.getSecond()));
+				return last.getSecond();
+			}
+		}
 
-        int size = MagicBallBundle.getMagicBallAdvicesCount();
-        if (size == 0) {
-            return CommonBundle.message("wisdom.dummy.answer");
-        }
+		int size = MagicBallBundle.getMagicBallAdvicesCount();
+		if (size == 0) {
+			return CommonBundle.message("wisdom.dummy.answer");
+		}
 
-        String message = MagicBallBundle.getMagicBallAdviceByIndex(randomIndex(size));
-        LAST_VALUE.set(Pair.create(now, message));
-        return message;
-    }
+		String message = MagicBallBundle.getMagicBallAdviceByIndex(randomIndex(size));
+		LAST_VALUE.set(Pair.create(now, message));
+		return message;
+	}
 
-    private boolean needToReuse(long timeDelta) {
-        if (timeDelta <= TIMEOUT_FOR_REPEAT_ANSWER) {
-            return true;
-        } else if (timeDelta <= TIMEOUT_FOR_HALF_CHANCE_TO_REPEAT_ANSWER) {
-            return Math.random() <= 0.5;
-        }
-        return false;
-    }
+	private boolean needToReuse(long timeDelta) {
+		if (timeDelta <= TIMEOUT_FOR_REPEAT_ANSWER) {
+			return true;
+		} else if (timeDelta <= TIMEOUT_FOR_HALF_CHANCE_TO_REPEAT_ANSWER) {
+			return Math.random() <= 0.5;
+		}
+		return false;
+	}
 
-    private int randomIndex(int size) {
-        return (int) (Math.random() * size);
-    }
+	private int randomIndex(int size) {
+		return (int) (Math.random() * size);
+	}
 
-    @Override
-    public boolean isDumbAware() {
-        return true;
-    }
+	@Override
+	public boolean isDumbAware() {
+		return true;
+	}
 
 }

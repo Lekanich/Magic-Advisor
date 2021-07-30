@@ -9,7 +9,7 @@ plugins {
     // Java support
     id("java")
     // Kotlin support
-    id("org.jetbrains.kotlin.jvm") version "1.5.10"
+    id("org.jetbrains.kotlin.jvm") version "1.5.21"
     // gradle-intellij-plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
     id("org.jetbrains.intellij") version "1.1.4"
     // gradle-changelog-plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
@@ -125,7 +125,9 @@ tasks {
 
     publishPlugin {
         dependsOn("patchChangelog")
-        token.set(File("token.txt").readText(Charsets.UTF_8))
+        if (File("token.txt").exists()) {
+            token.set(File("token.txt").readText(Charsets.UTF_8))
+        }
 //        token.set(System.getenv("PUBLISH_TOKEN"))
         // pluginVersion is based on the SemVer (https://semver.org) and supports pre-release labels, like 2.1.7-alpha.3
         // Specify pre-release label to publish the plugin in a custom Release Channel automatically. Read more:

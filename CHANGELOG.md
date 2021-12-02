@@ -6,11 +6,11 @@
 ### Changed
 - Versioning back to pure Semver
 
-## [2021.2.1]
+## [2021.3.1]
 
 ### Changed
 
-- IDEA update 2021.2
+- IDEA update 2021.3
 
 ## [2021.1.1]
 

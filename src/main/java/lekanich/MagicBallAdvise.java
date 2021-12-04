@@ -3,7 +3,6 @@ package lekanich;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import com.intellij.notification.Notification;
-import com.intellij.notification.NotificationListener;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.Notifications;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -41,23 +40,24 @@ public final class MagicBallAdvise extends AnAction {
 	}
 
 	private String selectMessage() {
-		long now = TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis());
-		Pair<Long, String> last = LAST_VALUE.get();
+		final long now = TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis());
+		final Pair<Long, String> last = LAST_VALUE.get();
 
 		if (last != null) {
-			boolean reuse = needToReuse(now - last.getFirst());
+			final boolean reuse = needToReuse(now - last.getFirst());
 			if (reuse) {
 				LAST_VALUE.set(Pair.create(now, last.getSecond()));
 				return last.getSecond();
 			}
 		}
 
-		int size = MagicBallBundle.getMagicBallAdvicesCount();
+		final int size = MagicBallBundle.getMagicBallAdvicesCount();
 		if (size == 0) {
 			return CommonBundle.message("wisdom.dummy.answer");
 		}
 
-		String message = MagicBallBundle.getMagicBallAdviceByIndex(randomIndex(size));
+		final int randomIndex = Randomizer.nextInt(size);
+		final String message = MagicBallBundle.getMagicBallAdviceByIndex(randomIndex);
 		LAST_VALUE.set(Pair.create(now, message));
 		return message;
 	}
@@ -69,10 +69,6 @@ public final class MagicBallAdvise extends AnAction {
 			return Math.random() <= 0.5;
 		}
 		return false;
-	}
-
-	private int randomIndex(int size) {
-		return (int) (Math.random() * size);
 	}
 
 	@Override

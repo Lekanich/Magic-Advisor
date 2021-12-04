@@ -74,7 +74,7 @@ public class WisdomBundle {
 		return Optional.empty();
 	}
 
-	public static String message(@Nullable final ResourceBundle bundle,
+	public static String message(@NotNull final ResourceBundle bundle,
 								 @NotNull final String key,
 								 Object @NotNull ... params) {
 		String value;

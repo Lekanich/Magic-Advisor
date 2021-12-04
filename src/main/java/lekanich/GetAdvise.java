@@ -23,7 +23,7 @@ public final class GetAdvise extends AnAction {
 	}
 
 	private Advice selectMessage() {
-		return WisdomBundle.getAdvice((int) (Math.random() * WisdomBundle.getAmount()))
+		return WisdomBundle.getAdvice(Randomizer.nextInt(WisdomBundle.getAmount()))
 				.orElseGet(() -> new Advice(
 						CommonBundle.message("wisdom.dummy.answer"),
 						CommonBundle.message("wisdom.main.advisor.title")

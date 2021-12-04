@@ -10,7 +10,7 @@ public class MagicBallBundle extends AbstractBundle {
     @NonNls
     private static final String BUNDLE_NAME = "messages.MagicBallBundle";
     @NonNls
-    public static final String[] KEYS = {
+    private static final String[] KEYS = {
             "wisdom.magic.ball.positive.1",
             "wisdom.magic.ball.positive.2",
             "wisdom.magic.ball.positive.3",

@@ -2,9 +2,25 @@
 
 # Magic Advisor Plugin Changelog
 
-## [Unreleased]
+### Added
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [2022.1.2] - 2022-06-05
 ### Changed
 - Incremental update
+
+## [2021.2.1]
+### Changed
+- IDEA update 2022.1
 
 ## [2021.3.2]
 ### Changed

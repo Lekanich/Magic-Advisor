@@ -1,7 +1,7 @@
 <idea-plugin>
 	<id>lekanich.magic-advisor</id>
 	<name>Magic Advisor</name>
-	<vendor email="lekan1992@gmail.com">Aleksandr Zhelezniak</vendor>
+	<vendor email="lekan1992@gmail.com">Oleksandr Zhelezniak</vendor>
 
 	<resource-bundle>messages.CommonBundle</resource-bundle>
 

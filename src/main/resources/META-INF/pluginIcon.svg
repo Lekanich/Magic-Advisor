@@ -5,8 +5,8 @@
             <stop offset="100%"/>
         </linearGradient>
         <linearGradient id="untitled-b" x1="50%" x2="50%" y1="0%" y2="100%">
-            <stop offset="0%" stop-color="#59A869"/>
-            <stop offset="100%" stop-color="#389FD6"/>
+            <stop offset="0%" stop-color="#0057b8"/>
+            <stop offset="100%" stop-color="#ffd700"/>
         </linearGradient>
     </defs>
     <g fill="none" fill-rule="evenodd">

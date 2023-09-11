@@ -2,6 +2,10 @@
 
 # Magic Advisor Plugin Changelog
 
+## [2023.2.1]
+### Changed
+- Incremental update
+
 ## [2022.2.2]
 ### Changed
 - Incremental update

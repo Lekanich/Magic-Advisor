@@ -2,58 +2,71 @@
 
 # Magic Advisor Plugin Changelog
 
-## [2023.2.1]
+## 2023.2.1
+
 ### Changed
 - Incremental update
 
-## [2022.2.2]
+## 2022.2.2
+
 ### Changed
 - Incremental update
 
-## [2022.1.2]
+## 2022.1.2
+
 ### Changed
 - Incremental update
 
-## [2021.2.1]
+## 2021.2.1
+
 ### Changed
 - IDEA update 2022.1
 
-## [2021.3.2]
+## 2021.3.2
+
 ### Changed
 - Use names of philosophers as titles.
 
-## [2021.3.1]
+## 2021.3.1
+
 ### Changed
 - IDEA update 2021.3
 
-## [2021.1.1]
+## 2021.1.1
+
 ### Changed
 - IDEA update 2021.1
 
-## [2020.3.2]
+## 2020.3.2
+
 ### Changed
 - IDEA update 2020.3.2
 - Notifications are no longer stick
 
-## [2020.3.1]
+## 2020.3.1
+
 ### Changed
 - IDEA update 2020.3
 
-## [2020.2.1]
+## 2020.2.1
+
 ### Changed
 - Unify source code to support single version.
 - The plugin icon
 
-## [1.0.6]
+## 1.0.6
+
 ### Added
 - Thoughts of Plato and Gandhi.
 
-## [1.0.5]
+## 1.0.5
+
 ### Added
 - An ability to get wisdom from different philosophers.
 - Thoughts of Socrates.
 
-## [1.0.4]
+## 1.0.4
+
 ### Added
 - Your magic ball 8 advisor. If you have any questions - just ask!
 - A short instruction how to use it! =)

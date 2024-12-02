@@ -22,9 +22,12 @@
 hs_err_pid*
 
 #Intellij Idea projct files
-/.idea/
-/.gradle/
-/build/
-
-possible.versions.txt
 /token.txt
+
+# IntelliJ IDEA
+.gradle
+.idea
+.intellijPlatform
+.qodana
+build
+gradle/wrapper

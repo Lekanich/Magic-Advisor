@@ -2,6 +2,10 @@
 
 # Magic Advisor Plugin Changelog
 
+## [Unreleased]
+
+- Update dependencies
+
 ## 2023.4.1
 
 - Update dependencies

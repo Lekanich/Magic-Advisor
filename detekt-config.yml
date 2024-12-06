@@ -6,3 +6,32 @@ formatting:
     continuationIndentSize: 4
   ParameterListWrapping:
     indentSize: 4
+
+# Default detekt configuration:
+# https://github.com/detekt/detekt/blob/master/detekt-core/src/main/resources/default-detekt-config.yml
+build:
+  excludeCorrectable: true
+
+config:
+  validation: true
+  warningsAsErrors: false
+
+style:
+  MagicNumber:
+    active: true
+    ignoreNumbers: '-1,0,1,2'
+  MaxLineLength:
+    active: true
+    maxLineLength: 120
+
+complexity:
+  LongMethod:
+    active: true
+    threshold: 50
+  LargeClass:
+    active: true
+    threshold: 500
+
+performance:
+  SpreadOperator:
+    active: true

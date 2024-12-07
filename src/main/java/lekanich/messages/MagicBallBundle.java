@@ -43,7 +43,7 @@ public class MagicBallBundle extends AbstractBundle {
         return KEYS.length;
     }
 
-    public static String getMagicBallAdviceByIndex(int index) {
+    public static String getMagicBallAdviceByIndex(final int index) {
         return BUNDLE.getMessage(KEYS[index]);
     }
 }

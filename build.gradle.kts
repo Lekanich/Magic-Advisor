@@ -46,6 +46,8 @@ dependencies {
     annotationProcessor(libs.lombok)
 
     detektPlugins(libs.detektFormatting)
+    testImplementation(libs.lombok)
+    testAnnotationProcessor(libs.lombok)
     testImplementation(libs.junit)
 
     // IntelliJ Platform Gradle Plugin Dependencies Extension - read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-dependencies-extension.html

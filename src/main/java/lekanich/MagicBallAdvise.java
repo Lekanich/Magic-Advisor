@@ -29,10 +29,10 @@ public final class MagicBallAdvise extends AnAction {
 	private static final AtomicReference<Pair<Long, String>> LAST_VALUE = new AtomicReference<>();
 
 	@Override
-	public void actionPerformed(@NotNull AnActionEvent e) {
-		String message = selectMessage();
+	public void actionPerformed(@NotNull final AnActionEvent e) {
+		final String message = selectMessage();
 
-		Notification notification = NotificationCenter.getNotificationGroup()
+		final Notification notification = NotificationCenter.getNotificationGroup()
 				.createNotification(message, NotificationType.INFORMATION);
 		notification.setTitle(CommonBundle.message("wisdom.main.magic.ball.title"));
 
@@ -62,7 +62,7 @@ public final class MagicBallAdvise extends AnAction {
 		return message;
 	}
 
-	private boolean needToReuse(long timeDelta) {
+	private boolean needToReuse(final long timeDelta) {
 		if (timeDelta <= TIMEOUT_FOR_REPEAT_ANSWER) {
 			return true;
 		} else if (timeDelta <= TIMEOUT_FOR_HALF_CHANCE_TO_REPEAT_ANSWER) {

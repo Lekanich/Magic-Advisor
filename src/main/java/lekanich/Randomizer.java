@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class Randomizer {
 	private static final Random RANDOM = new Random();
 
-	public static int nextInt(int upperBound) {
+	public static int nextInt(final int upperBound) {
 		return RANDOM.nextInt(upperBound);
 	}
 }

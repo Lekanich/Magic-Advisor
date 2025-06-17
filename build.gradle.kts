@@ -4,6 +4,7 @@ import org.jetbrains.changelog.markdownToHTML
 import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 import org.jetbrains.intellij.platform.gradle.models.ProductRelease
+import java.time.LocalDate
 
 fun properties(key: String) = providers.gradleProperty(key)
 
@@ -16,12 +17,11 @@ plugins {
     alias(libs.plugins.intelliJPlatform)
     alias(libs.plugins.changelog)
     alias(libs.plugins.detekt)
-    alias(libs.plugins.ktlint)
     checkstyle
 }
 
-group = properties("pluginGroup")
-version = properties("pluginVersion")
+group = properties("pluginGroup").get()
+version = properties("pluginVersion").get()
 
 println("ArtifactVersion is : ${properties("pluginVersion").get()}")
 
@@ -52,7 +52,7 @@ dependencies {
 
     // IntelliJ Platform Gradle Plugin Dependencies Extension - read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-dependencies-extension.html
     intellijPlatform {
-        create(properties("platformType"), properties("platformVersion"))
+        create(properties("platformType").get(), properties("platformVersion").get())
 
         // Plugin Dependencies. Uses `platformBundledPlugins` property from the gradle.properties file for bundled IntelliJ Platform plugins.
         bundledPlugins(properties("platformBundledPlugins").map { it.split(',') })
@@ -60,7 +60,6 @@ dependencies {
         // Plugin Dependencies. Uses `platformPlugins` property from the gradle.properties file for plugin from JetBrains Marketplace.
         plugins(properties("platformPlugins").map { it.split(',') })
 
-        instrumentationTools()
         pluginVerifier()
         zipSigner()
         testFramework(TestFrameworkType.Platform)
@@ -70,8 +69,8 @@ dependencies {
 // Configure IntelliJ Platform Gradle Plugin - read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-extension.html
 intellijPlatform {
     pluginConfiguration {
-        name = properties("pluginName")
-        version = properties("pluginVersion")
+        name = properties("pluginName").get()
+        version = properties("pluginVersion").get()
 
         // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
         description =
@@ -100,10 +99,8 @@ intellijPlatform {
             }
 
         ideaVersion {
-            // like to put a major version here, instead of the specific
             sinceBuild = properties("pluginSinceBuild")
-            // remove until build
-            untilBuild = properties("pluginUntilBuild")
+            untilBuild = provider { null }
         }
     }
 
@@ -122,21 +119,15 @@ intellijPlatform {
     pluginVerification {
         ides {
             recommended()
-            select {
-                types = listOf(IntelliJPlatformType.IntellijIdeaCommunity)
-                channels = listOf(ProductRelease.Channel.RELEASE)
-                sinceBuild = properties("pluginSinceBuild")
-            }
         }
     }
 }
 
 // Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
 changelog {
-    version = properties("pluginVersion")
-    header = provider(version::get)
+    header = provider { "${version.get()} - ${LocalDate.now()}" }
     itemPrefix = "-"
-    keepUnreleasedSection = false
+    keepUnreleasedSection = true
     groups = listOf("Added", "Changed", "Deprecated", "Removed", "Fixed", "Security")
 }
 
@@ -172,9 +163,7 @@ tasks {
     }
 
     withType<Checkstyle>().configureEach {
-        reports {
-            configFile = file("config/checkstyle/checkstyle.xml")
-        }
+        configFile = file("config/checkstyle/checkstyle.xml")
     }
 
     runIde {

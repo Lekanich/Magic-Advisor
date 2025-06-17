@@ -146,7 +146,7 @@ tasks {
     }
 
     withType<Detekt> {
-        jvmTarget = "17"
+        jvmTarget = "21"
         reports {
             // Enable/Disable XML report (default: true)
             xml.required = false

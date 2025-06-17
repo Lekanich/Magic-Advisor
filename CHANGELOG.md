@@ -4,6 +4,7 @@
 
 ## [Unreleased]
 
+- Added Error Report Submitter
 - Update dependencies
 
 ## 2023.4.1

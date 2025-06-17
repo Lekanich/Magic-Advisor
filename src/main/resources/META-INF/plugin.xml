@@ -9,6 +9,8 @@
 
 	<extensions defaultExtensionNs="com.intellij">
 		<notificationGroup id="Magic Advisor" displayType="BALLOON" key="wisdom.main.name"/>
+
+		<errorHandler implementation="com.intellij.diagnostic.JetBrainsMarketplaceErrorReportSubmitter"/>
 	</extensions>
 
 	<actions>

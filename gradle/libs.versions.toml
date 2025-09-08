@@ -1,6 +1,6 @@
 [versions]
 #libraries
-lombok = "1.18.38"
+lombok = "1.18.40"
 junit = "4.13.2"
 
 #plugins

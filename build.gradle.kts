@@ -9,6 +9,21 @@ import java.time.LocalDate
 fun properties(key: String) = providers.gradleProperty(key)
 
 fun environment(key: String) = providers.environmentVariable(key)
+fun isProperty(key: String, defaultValue: Boolean = false): Boolean =
+    getBooleanValue(providers.gradleProperty(key), key, "Property", defaultValue)
+
+fun isEnv(key: String, defaultValue: Boolean = false): Boolean =
+    getBooleanValue(providers.environmentVariable(key), key, "Environment", defaultValue)
+
+private fun getBooleanValue(provider: Provider<String>, key: String, label: String, defaultValue: Boolean): Boolean {
+    val result = provider.map { it.toBoolean() }.getOrElse(defaultValue)
+    println("$label '$key' = $result")
+    return result
+}
+
+val isCI: Boolean by lazy { isEnv("CI") }
+
+fun isNotCI(): Boolean = !isCI
 
 plugins {
     // Java support
@@ -139,6 +154,21 @@ intellijPlatform {
                 channels = listOf(Channel.RELEASE)
                 sinceBuild = "252"
             }
+        }
+    }
+
+    // Enable IDE caching for plugin verification
+    // Cache path is configured via org.jetbrains.intellij.platform.intellijPlatformCache in gradle.properties
+    caching {
+        ides {
+            enabled = isNotCI()
+        }
+    }
+
+    idea {
+        module {
+            isDownloadSources = isNotCI()
+            isDownloadJavadoc = isNotCI()
         }
     }
 }

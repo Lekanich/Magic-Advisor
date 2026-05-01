@@ -6,9 +6,12 @@ import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 import org.jetbrains.intellij.platform.gradle.models.ProductRelease.Channel
 import java.time.LocalDate
 
-fun properties(key: String) = providers.gradleProperty(key)
+fun properties(key: String): Provider<String> = providers.gradleProperty(key)
 
-fun environment(key: String) = providers.environmentVariable(key)
+fun environment(key: String): Provider<String> = providers.environmentVariable(key)
+
+fun canCreateTag(): Boolean = isProperty("createTag", true)
+
 fun isProperty(key: String, defaultValue: Boolean = false): Boolean =
     getBooleanValue(providers.gradleProperty(key), key, "Property", defaultValue)
 
@@ -23,7 +26,8 @@ private fun getBooleanValue(provider: Provider<String>, key: String, label: Stri
 
 val isCI: Boolean by lazy { isEnv("CI") }
 
-fun isNotCI(): Boolean = !isCI
+val isNotCI: Boolean
+    get() = !isCI
 
 plugins {
     // Java support
@@ -142,18 +146,12 @@ intellijPlatform {
     // https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-extension.html#intellijPlatform-pluginVerification-ides
     pluginVerification {
         ides {
-            select {
-                types = listOf(IntelliJPlatformType.IntellijIdeaCommunity)
-                channels = listOf(Channel.RELEASE)
-                sinceBuild = properties("pluginSinceBuild")
-                untilBuild = properties("pluginSinceBuild").get() + ".*"
+            if (isNotCI) {
+                create(IntelliJPlatformType.IntellijIdeaCommunity, "2024.3.7")
+                create(IntelliJPlatformType.IntellijIdea, "2025.3.4")
+                create(IntelliJPlatformType.IntellijIdea, "2026.1.1")
             }
-            // try to simulate latest release
-            select {
-                types = listOf(IntelliJPlatformType.IntellijIdea)
-                channels = listOf(Channel.RELEASE)
-                sinceBuild = "252"
-            }
+            latest()
         }
     }
 
@@ -161,14 +159,14 @@ intellijPlatform {
     // Cache path is configured via org.jetbrains.intellij.platform.intellijPlatformCache in gradle.properties
     caching {
         ides {
-            enabled = isNotCI()
+            enabled = isNotCI
         }
     }
 
     idea {
         module {
-            isDownloadSources = isNotCI()
-            isDownloadJavadoc = isNotCI()
+            isDownloadSources = isNotCI
+            isDownloadJavadoc = isNotCI
         }
     }
 }

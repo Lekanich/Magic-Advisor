@@ -10,8 +10,6 @@ fun properties(key: String): Provider<String> = providers.gradleProperty(key)
 
 fun environment(key: String): Provider<String> = providers.environmentVariable(key)
 
-fun canCreateTag(): Boolean = isProperty("createTag", true)
-
 fun isProperty(key: String, defaultValue: Boolean = false): Boolean =
     getBooleanValue(providers.gradleProperty(key), key, "Property", defaultValue)
 
